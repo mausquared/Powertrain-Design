@@ -18,13 +18,13 @@ open(sys_name);
 
 %% Parameters definition
 % Model parameters for EV with 1-spd
-x = [40 40 2 40 20 25];  % set of input design parameters, x
-g1        = x(1);  % gear ratio [-]
-g1        = x(2);  % gear ratio [-]
-scale_EM  = x(3);  % EM scale [-]
-scale_EM  = x(4);  % EM scale [-]
-Np        = x(5);  % Number of cells connected in parallel [-]
-Ns        = x(6);  % Number of cells connected in series [-]
+x = [10 8 5 5 24 25];  % set of input design parameters, x
+g1_a        = x(1);  % gear ratio [-]
+g1_b        = x(2);  % gear ratio [-]
+scale_EM    = x(3);  % EM scale [-]
+scale_EM    = x(4);  % EM scale [-]
+Np          = x(5);  % Number of cells connected in parallel [-]
+Ns          = x(6);  % Number of cells connected in series [-]
 
 % Gear box 
 e_gb    = 0.97;   % internal efficiency [-]
@@ -74,7 +74,7 @@ vf = 100/3.6;                % final speed acceleration
 ta = (lambda*mv*(vb^2+vf^2))./(2*(Ptmax - (2/3)*mv*g*cr*vf - (1/5)*rho*cd*Af*vf^3));
 
 % Max. speed vehicle without overrevving machine
-vmax = (dw/2)* max(w_EM_max)/g1; % [m/s]
+vmax = (dw/2)* max(w_EM_max)/g1_a; % [m/s]
 
 %% Simulation
 results = sim(sys_name);
