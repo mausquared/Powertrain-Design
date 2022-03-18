@@ -18,7 +18,7 @@ open(sys_name);
 
 %% Parameters definition
 % Model parameters for EV with 1-spd
-x = [40 40 2 40 20 22];  % set of input design parameters, x
+x = [40 40 2 40 20 55];  % set of input design parameters, x
 g1        = x(1);  % gear ratio [-]
 g1        = x(2);  % gear ratio [-]
 scale_EM  = x(3);  % EM scale [-]
